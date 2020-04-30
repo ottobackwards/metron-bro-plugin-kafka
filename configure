@@ -144,7 +144,7 @@ if [ -z "$zeekdist" ]; then
         echo "Either 'zeek-config' must be in PATH or '--zeek-dist=<path>' used"
         exit 1
     fi
-
+    echo "HEY OTTO SETTING LEGACY BRO JUNK"
     append_cache_entry BRO_CONFIG_PREFIX PATH "$(${zeek_config} --prefix)"
     append_cache_entry BRO_CONFIG_INCLUDE_DIR PATH "$(${zeek_config} --include_dir)"
     append_cache_entry BRO_CONFIG_PLUGIN_DIR PATH "$(${zeek_config} --plugin_dir)"
@@ -176,6 +176,7 @@ else
 
     # BRO_DIST is the canonical/historical name used by plugin CMake scripts
     # ZEEK_DIST doesn't serve a function at the moment, but set/provided anyway
+    echo "HEY OTTO SETTING THE CACHE ENTRY FOR ZEEK_DIST"
     append_cache_entry BRO_DIST  PATH "$zeekdist"
     append_cache_entry ZEEK_DIST PATH "$zeekdist"
     append_cache_entry CMAKE_MODULE_PATH PATH "$zeekdist/cmake"
